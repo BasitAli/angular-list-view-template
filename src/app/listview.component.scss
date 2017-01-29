@@ -1,0 +1,10 @@
+:host {
+  overflow: hidden;
+}
+
+.list-body {
+  height: 100%;
+  outline: none;
+  overflow: scroll;
+  position: relative;
+}

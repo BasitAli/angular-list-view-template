@@ -4,10 +4,14 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { ListView } from './listview.directive';
+import { ListViewComponent } from './listview.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ListView,
+    ListViewComponent
   ],
   imports: [
     BrowserModule,

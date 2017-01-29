@@ -1,3 +1,18 @@
-<h1>
-  {{title}}
+<h1 class="heading">
+  List View with TemplateRef Demo
 </h1>
+
+<list-view #list class="list-view" [items]="listItems" (onSelectionChanged)="onListSelectionChanged($event)">
+  <template let-item let-selected="selected" let-active="active" let-odd="odd">
+      <div class="list-item" [ngClass]="{odd: odd, selected: selected, active: active}">{{item}}</div>
+  </template>
+</list-view>
+
+<div class="toolbar">
+  <div class="button" (click)="list.selectAll()">Select all</div>
+  <div class="button" (click)="list.clearSelection()">Clear Selection</div>
+  <div class="space-fill"></div>
+  <div>
+    {{selectedItems.length}} items selected.
+  </div>
+</div>
