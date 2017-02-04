@@ -22,11 +22,9 @@ export class ListViewRow {
   selector: 'list-view',
   template: `
   <div #listBody class="list-body" tabindex=0 (keydown)="handleKeyPress($event)">
-    <template ngFor let-item let-index="index" [ngForOf]="listItems">
-      <div class="list-item-body" (click)="handleClick($event, index)" [attr.data-index]="index">
-        <template [ngTemplateOutlet]="template" [ngOutletContext]="item"></template>
-      </div>
-    </template>
+    <div *ngFor="let item of listItems; let index = index" class="list-item-body" (click)="handleClick($event, index)" [attr.data-index]="index">
+      <template [ngTemplateOutlet]="template" [ngOutletContext]="item"></template>
+    </div>
   </div>`,
   styleUrls: ['./listview.component.scss']
 })
